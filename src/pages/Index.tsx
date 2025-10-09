@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+import HeroHome from "@/components/HeroHome";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, Sprout, Users, Handshake, Heart, Mail, Phone, MapPin } from "lucide-react";
@@ -21,7 +21,7 @@ const Index = () => {
       <Navbar />
       
       <main>
-        <Hero
+        <HeroHome
           backgroundImage={heroBg}
           title="Building the Future of Real Estate & Agriculture"
           subtitle="Sustainable investments in land, housing, and agribusiness ventures."
