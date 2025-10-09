@@ -8,8 +8,14 @@ import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import realEstateImg from "@/assets/real-estate-hero.jpg";
 import agribusinessImg from "@/assets/agribusiness-hero.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Index = () => {
+  const whatWeDoSection = useScrollAnimation();
+  const clientsSection = useScrollAnimation();
+  const csrSection = useScrollAnimation();
+  const contactSection = useScrollAnimation();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -22,9 +28,13 @@ const Index = () => {
         />
 
         {/* What We Do - Business Divisions */}
-        <section className="py-20 px-4 bg-background">
+        <section ref={whatWeDoSection.elementRef} className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12 animate-fade-in">
+            <div className={`text-center mb-12 transition-all duration-700 ${
+              whatWeDoSection.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}>
               <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
                 What We Do
               </h2>
@@ -35,7 +45,11 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Real Estate Division */}
-              <Card className="overflow-hidden hover-scale border-border animate-fade-in">
+              <Card className={`overflow-hidden hover-scale border-border transition-all duration-700 ${
+                whatWeDoSection.isVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 -translate-x-20'
+              }`}>
                 <div className="h-48 overflow-hidden">
                   <img src={realEstateImg} alt="Real Estate" className="w-full h-full object-cover" />
                 </div>
@@ -58,7 +72,11 @@ const Index = () => {
               </Card>
 
               {/* Agribusiness Division */}
-              <Card className="overflow-hidden hover-scale border-border animate-fade-in-delay">
+              <Card className={`overflow-hidden hover-scale border-border transition-all duration-700 delay-200 ${
+                whatWeDoSection.isVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 translate-x-20'
+              }`}>
                 <div className="h-48 overflow-hidden">
                   <img src={agribusinessImg} alt="Agribusiness" className="w-full h-full object-cover" />
                 </div>
@@ -84,9 +102,13 @@ const Index = () => {
         </section>
 
         {/* Target Clients & Partners */}
-        <section className="py-20 px-4 bg-muted/30">
+        <section ref={clientsSection.elementRef} className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12 animate-fade-in">
+            <div className={`text-center mb-12 transition-all duration-700 ${
+              clientsSection.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}>
               <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
                 Our Clients & Partners
               </h2>
@@ -96,7 +118,11 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-border animate-fade-in">
+              <Card className={`border-border transition-all duration-700 ${
+                clientsSection.isVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 -translate-x-20'
+              }`}>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <Users className="w-8 h-8 text-primary" />
@@ -125,7 +151,11 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-border animate-fade-in-delay">
+              <Card className={`border-border transition-all duration-700 delay-200 ${
+                clientsSection.isVisible 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 translate-x-20'
+              }`}>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <Handshake className="w-8 h-8 text-primary" />
@@ -158,9 +188,13 @@ const Index = () => {
         </section>
 
         {/* CSR Impact Section */}
-        <section className="py-20 px-4 bg-background">
+        <section ref={csrSection.elementRef} className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12 animate-fade-in">
+            <div className={`text-center mb-12 transition-all duration-700 ${
+              csrSection.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}>
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <Heart className="w-8 h-8 text-primary" />
               </div>
@@ -173,19 +207,31 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="text-center border-border hover-scale animate-fade-in">
+              <Card className={`text-center border-border hover-scale transition-all duration-700 ${
+                csrSection.isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}>
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-primary mb-2">500+</div>
                   <p className="text-muted-foreground">Trees Planted</p>
                 </CardContent>
               </Card>
-              <Card className="text-center border-border hover-scale animate-fade-in-delay">
+              <Card className={`text-center border-border hover-scale transition-all duration-700 delay-200 ${
+                csrSection.isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}>
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-primary mb-2">50+</div>
                   <p className="text-muted-foreground">Communities Impacted</p>
                 </CardContent>
               </Card>
-              <Card className="text-center border-border hover-scale animate-fade-in-delay-2">
+              <Card className={`text-center border-border hover-scale transition-all duration-700 delay-300 ${
+                csrSection.isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}>
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-primary mb-2">1000+</div>
                   <p className="text-muted-foreground">Youth Empowered</p>
@@ -193,7 +239,11 @@ const Index = () => {
               </Card>
             </div>
 
-            <div className="text-center">
+            <div className={`text-center transition-all duration-700 delay-500 ${
+              csrSection.isVisible 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-95'
+            }`}>
               <Link to="/csr">
                 <Button size="lg">Explore Our Impact</Button>
               </Link>
@@ -202,9 +252,13 @@ const Index = () => {
         </section>
 
         {/* Contact Us Section */}
-        <section className="py-20 px-4 bg-primary text-primary-foreground">
+        <section ref={contactSection.elementRef} className="py-20 px-4 bg-primary text-primary-foreground">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12 animate-fade-in">
+            <div className={`text-center mb-12 transition-all duration-700 ${
+              contactSection.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}>
               <h2 className="font-display font-bold text-3xl md:text-4xl mb-4">
                 Get In Touch
               </h2>
@@ -214,21 +268,33 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <Card className="text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale animate-fade-in">
+              <Card className={`text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale transition-all duration-700 ${
+                contactSection.isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}>
                 <CardContent className="pt-6">
                   <Phone className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Phone</h3>
                   <p className="text-sm text-primary-foreground/80">+234 (0) 123 456 7890</p>
                 </CardContent>
               </Card>
-              <Card className="text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale animate-fade-in-delay">
+              <Card className={`text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale transition-all duration-700 delay-200 ${
+                contactSection.isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}>
                 <CardContent className="pt-6">
                   <Mail className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Email</h3>
                   <p className="text-sm text-primary-foreground/80">info@agriestate.com</p>
                 </CardContent>
               </Card>
-              <Card className="text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale animate-fade-in-delay-2">
+              <Card className={`text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale transition-all duration-700 delay-300 ${
+                contactSection.isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}>
                 <CardContent className="pt-6">
                   <MapPin className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Office Hours</h3>
@@ -237,7 +303,11 @@ const Index = () => {
               </Card>
             </div>
 
-            <div className="text-center">
+            <div className={`text-center transition-all duration-700 delay-500 ${
+              contactSection.isVisible 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-95'
+            }`}>
               <Link to="/contact">
                 <Button size="lg" variant="secondary">Contact Us</Button>
               </Link>
