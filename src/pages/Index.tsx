@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroHome from "@/components/HeroHome";
+import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, Sprout, Users, Handshake, Heart, Mail, Phone, MapPin } from "lucide-react";
@@ -21,7 +21,7 @@ const Index = () => {
       <Navbar />
       
       <main>
-        <HeroHome
+        <Hero
           backgroundImage={heroBg}
           title="Building the Future of Real Estate & Agriculture"
           subtitle="Sustainable investments in land, housing, and agribusiness ventures."
@@ -188,7 +188,7 @@ const Index = () => {
         </section>
 
         {/* CSR Impact Section */}
-        <section ref={csrSection.elementRef} className="py-20 px-4 bg-background">
+          <section ref={csrSection.elementRef} className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className={`text-center mb-12 transition-all duration-700 ${
               csrSection.isVisible 
