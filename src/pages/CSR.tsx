@@ -3,8 +3,14 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { TreePine, Droplet, GraduationCap, Heart } from "lucide-react";
 import csrHero from "@/assets/csr-hero.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const CSR = () => {
+  const { elementRef: introRef, isVisible: introVisible } = useScrollAnimation();
+  const { elementRef: statsRef, isVisible: statsVisible } = useScrollAnimation();
+  const { elementRef: initiativesRef, isVisible: initiativesVisible } = useScrollAnimation();
+  const { elementRef: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+
   const initiatives = [
     {
       icon: TreePine,
@@ -51,13 +57,25 @@ const CSR = () => {
         />
 
         {/* Intro Section */}
-        <section className="py-16 bg-background">
+        <section ref={introRef} className="py-16 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-foreground animate-fade-in">
+              <h2 
+                className="font-display font-bold text-3xl md:text-4xl mb-6 text-foreground transition-all duration-700"
+                style={{
+                  opacity: introVisible ? 1 : 0,
+                  transform: introVisible ? 'translateY(0)' : 'translateY(20px)'
+                }}
+              >
                 Our Commitment to Community
               </h2>
-              <p className="text-lg text-muted-foreground animate-fade-in-delay">
+              <p 
+                className="text-lg text-muted-foreground transition-all duration-700 delay-200"
+                style={{
+                  opacity: introVisible ? 1 : 0,
+                  transform: introVisible ? 'translateY(0)' : 'translateY(20px)'
+                }}
+              >
                 We believe that true success is measured not just by business growth, but by the
                 positive impact we create in the communities where we operate. Our CSR initiatives
                 focus on environmental sustainability, education, healthcare, and community
@@ -68,14 +86,18 @@ const CSR = () => {
         </section>
 
         {/* Impact Stats */}
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section ref={statsRef} className="py-16 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {impactStats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="text-center animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="text-center transition-all duration-700"
+                  style={{
+                    opacity: statsVisible ? 1 : 0,
+                    transform: statsVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transitionDelay: `${index * 100}ms`
+                  }}
                 >
                   <div className="font-display font-bold text-4xl md:text-5xl mb-2 text-accent">
                     {stat.number}
@@ -90,17 +112,27 @@ const CSR = () => {
         </section>
 
         {/* Initiatives Grid */}
-        <section className="py-16 bg-muted">
+        <section ref={initiativesRef} className="py-16 bg-muted">
           <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground">
+            <h2 
+              className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground transition-all duration-700"
+              style={{
+                opacity: initiativesVisible ? 1 : 0,
+                transform: initiativesVisible ? 'translateY(0)' : 'translateY(20px)'
+              }}
+            >
               Our Initiatives
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {initiatives.map((initiative, index) => (
                 <div
                   key={initiative.title}
-                  className="bg-card rounded-lg overflow-hidden hover-grow"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="bg-card rounded-lg overflow-hidden hover-grow transition-all duration-700"
+                  style={{
+                    opacity: initiativesVisible ? 1 : 0,
+                    transform: initiativesVisible ? 'translateY(0)' : 'translateY(30px)',
+                    transitionDelay: `${index * 100}ms`
+                  }}
                 >
                   <img
                     src={initiative.image}

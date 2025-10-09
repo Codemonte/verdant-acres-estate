@@ -4,8 +4,13 @@ import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import { Wheat, Beef, Factory, Globe } from "lucide-react";
 import agribusinessHero from "@/assets/agribusiness-hero.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Agribusiness = () => {
+  const { elementRef: introRef, isVisible: introVisible } = useScrollAnimation();
+  const { elementRef: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
+  const { elementRef: projectsRef, isVisible: projectsVisible } = useScrollAnimation();
+
   const services = [
     {
       icon: Wheat,
@@ -45,13 +50,25 @@ const Agribusiness = () => {
         />
 
         {/* Intro Section */}
-        <section className="py-16 bg-background">
+        <section ref={introRef} className="py-16 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-foreground animate-fade-in">
+              <h2 
+                className="font-display font-bold text-3xl md:text-4xl mb-6 text-foreground transition-all duration-700"
+                style={{
+                  opacity: introVisible ? 1 : 0,
+                  transform: introVisible ? 'translateY(0)' : 'translateY(20px)'
+                }}
+              >
                 Farming for the Future
               </h2>
-              <p className="text-lg text-muted-foreground animate-fade-in-delay">
+              <p 
+                className="text-lg text-muted-foreground transition-all duration-700 delay-200"
+                style={{
+                  opacity: introVisible ? 1 : 0,
+                  transform: introVisible ? 'translateY(0)' : 'translateY(20px)'
+                }}
+              >
                 Our agribusiness division combines traditional farming wisdom with modern
                 technology to create sustainable, profitable agricultural ventures. We focus on
                 innovation, efficiency, and environmental stewardship in all our operations.
@@ -61,28 +78,49 @@ const Agribusiness = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 bg-muted">
+        <section ref={servicesRef} className="py-16 bg-muted">
           <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground">
+            <h2 
+              className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground transition-all duration-700"
+              style={{
+                opacity: servicesVisible ? 1 : 0,
+                transform: servicesVisible ? 'translateY(0)' : 'translateY(20px)'
+              }}
+            >
               What We Do
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {services.map((service) => (
-                <ServiceCard
+              {services.map((service, index) => (
+                <div
                   key={service.title}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                />
+                  className="transition-all duration-700"
+                  style={{
+                    opacity: servicesVisible ? 1 : 0,
+                    transform: servicesVisible ? 'translateY(0)' : 'translateY(30px)',
+                    transitionDelay: `${index * 100}ms`
+                  }}
+                >
+                  <ServiceCard
+                    icon={service.icon}
+                    title={service.title}
+                    description={service.description}
+                  />
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Featured Projects Gallery */}
-        <section className="py-16 bg-background">
+        <section ref={projectsRef} className="py-16 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground">
+            <h2 
+              className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground transition-all duration-700"
+              style={{
+                opacity: projectsVisible ? 1 : 0,
+                transform: projectsVisible ? 'translateY(0)' : 'translateY(20px)'
+              }}
+            >
               Our Projects
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -120,8 +158,12 @@ const Agribusiness = () => {
               ].map((project, index) => (
                 <div
                   key={project.name}
-                  className="relative group overflow-hidden rounded-lg hover-grow"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="relative group overflow-hidden rounded-lg hover-grow transition-all duration-700"
+                  style={{
+                    opacity: projectsVisible ? 1 : 0,
+                    transform: projectsVisible ? 'translateY(0)' : 'translateY(30px)',
+                    transitionDelay: `${index * 100}ms`
+                  }}
                 >
                   <img
                     src={project.image}
