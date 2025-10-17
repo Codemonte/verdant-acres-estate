@@ -41,7 +41,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img src={logo} alt="Logo" className="h-12 w-12 object-contain" />
-            <span className="font-display font-bold text-lg text-primary hidden sm:block">
+            <span className="font-display font-bold text-lg text-primary">
               AgriEstate
             </span>
           </Link>

@@ -111,12 +111,12 @@ All colors MUST be HSL.
   }
 
   .animate-fade-in-delay {
-    animation: fade-in 0.8s ease-out 0.2s forwards;
+    animation: fade-in 0.8s ease-out 2.2s forwards;
     opacity: 0;
   }
 
   .animate-fade-in-delay-2 {
-    animation: fade-in 0.8s ease-out 0.4s forwards;
+    animation: fade-in 0.8s ease-out 2.4s forwards;
     opacity: 0;
   }
 
