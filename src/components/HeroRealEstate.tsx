@@ -11,7 +11,7 @@ interface HeroAgribusinessProps {
 
 const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: HeroAgribusinessProps) => {
   return (
-    <section className="relative h-[70vh] md:h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Zoom-Pan Animation */}
       <div
         className="absolute inset-0 bg-cover bg-center animate-zoom-pan"
@@ -42,20 +42,20 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
           </div>
 
           {/* Animated Images Grid */}
-          <div className="grid grid-cols-2 gap-2 md:gap-4 animate-fade-in-delay-2 mt-8 lg:mt-0">
+          <div className="hidden lg:grid grid-cols-2 gap-4 animate-fade-in-delay-2">
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
                 <img 
                   src={build3Img} 
                   alt="Real Estate" 
-                  className="w-full h-32 md:h-64 object-cover hover-scale"
+                  className="w-full h-64 object-cover hover-scale"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
                 <img 
                   src={build2Img} 
                   alt="Agribusiness" 
-                  className="w-full h-24 md:h-48 object-cover hover-scale"
+                  className="w-full h-48 object-cover hover-scale"
                 />
               </div>
             </div>
@@ -64,7 +64,7 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
                 <img 
                   src={buildImg} 
                   alt="Our Mission" 
-                  className="w-full h-40 md:h-80 object-cover hover-scale"
+                  className="w-full h-80 object-cover hover-scale"
                 />
               </div>
             </div>
