@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero = ({ backgroundImage, title, subtitle, overlay = true }: HeroProps) => {
   return (
-    <section className="relative h-[70vh] md:h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Zoom-Pan Animation */}
       <div
         className="absolute inset-0 bg-cover bg-center animate-zoom-pan"
