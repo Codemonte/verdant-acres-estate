@@ -158,7 +158,7 @@ const Agribusiness = () => {
               ].map((project, index) => (
                 <div
                   key={project.name}
-                  className="relative group overflow-hidden rounded-lg hover-grow transition-all duration-700"
+                  className="relative overflow-hidden rounded-lg hover-grow transition-all duration-700"
                   style={{
                     opacity: projectsVisible ? 1 : 0,
                     transform: projectsVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -168,9 +168,9 @@ const Agribusiness = () => {
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end">
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/90 to-transparent flex items-end pointer-events-none">
                     <div className="p-6 text-primary-foreground">
                       <h3 className="font-display font-semibold text-xl mb-1">
                         {project.name}
