@@ -1,9 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+import HeroRealEstate from "@/components/HeroRealEstate";
 import ServiceCard from "@/components/ServiceCard";
 import { Building2, Home, MapPin, Briefcase } from "lucide-react";
 import realEstateHero from "@/assets/real-estate-hero.jpg";
+import valleyestate from "@/assets/valleyestate.jpg";
+import plaza from "@/assets/plaza.jpg";
+import residences from "@/assets/residences.jpg";
+import urban from "@/assets/urban.jpg";
+import gardens from "@/assets/gardens.jpg";
+import metro from "@/assets/metro.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const RealEstate = () => {
@@ -43,7 +49,7 @@ const RealEstate = () => {
       <Navbar />
 
       <main className="pt-20">
-        <Hero
+        <HeroRealEstate
           backgroundImage={realEstateHero}
           title="Real Estate Excellence"
           subtitle="Building communities and creating value through innovative property development"
@@ -128,32 +134,32 @@ const RealEstate = () => {
                 {
                   name: "Green Valley Estate",
                   location: "Lagos",
-                  image: realEstateHero,
+                  image: valleyestate,
                 },
                 {
                   name: "Skyline Commercial Plaza",
                   location: "Abuja",
-                  image: realEstateHero,
+                  image: plaza,
                 },
                 {
                   name: "Riverside Residences",
                   location: "Port Harcourt",
-                  image: realEstateHero,
+                  image: residences,
                 },
                 {
                   name: "Urban Heights",
                   location: "Ibadan",
-                  image: realEstateHero,
+                  image: urban,
                 },
                 {
                   name: "Coastal Gardens",
                   location: "Calabar",
-                  image: realEstateHero,
+                  image: gardens,
                 },
                 {
                   name: "Metro Business Hub",
                   location: "Enugu",
-                  image: realEstateHero,
+                  image: metro,
                 },
               ].map((project, index) => (
                 <div

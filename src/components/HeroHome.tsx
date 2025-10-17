@@ -1,6 +1,6 @@
-import realEstateImg from "@/assets/real-estate-hero.jpg";
-import agribusinessImg from "@/assets/agribusiness-hero.jpg";
-import aboutImg from "@/assets/about-us.jpg";
+import buildingImg from "@/assets/building.jpg";
+import machineImg from "@/assets/machine.jpg";
+import peopleImg from "@/assets/people.jpg";
 
 interface HeroHomeProps {
   backgroundImage: string;
@@ -46,14 +46,14 @@ const HeroHome = ({ backgroundImage, title, subtitle, overlay = true }: HeroHome
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
                 <img 
-                  src={realEstateImg} 
+                  src={buildingImg} 
                   alt="Real Estate" 
                   className="w-full h-64 object-cover hover-scale"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
                 <img 
-                  src={agribusinessImg} 
+                  src={machineImg} 
                   alt="Agribusiness" 
                   className="w-full h-48 object-cover hover-scale"
                 />
@@ -62,7 +62,7 @@ const HeroHome = ({ backgroundImage, title, subtitle, overlay = true }: HeroHome
             <div className="mt-8">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
                 <img 
-                  src={aboutImg} 
+                  src={peopleImg} 
                   alt="Our Mission" 
                   className="w-full h-80 object-cover hover-scale"
                 />

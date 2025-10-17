@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { TreePine, Droplet, GraduationCap, Heart } from "lucide-react";
 import csrHero from "@/assets/csr-hero.jpg";
+import borehole from "@/assets/borehole.jpg";
+import youth from "@/assets/youth.jpg";
+import healthcentre from "@/assets/healthcentre.jpg";
+import environment from "@/assets/environment.jpg"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const CSR = () => {
@@ -16,25 +20,25 @@ const CSR = () => {
       icon: TreePine,
       title: "Environmental Sustainability",
       description: "Tree planting campaigns and renewable energy adoption in our projects.",
-      image: csrHero,
+      image: environment,
     },
     {
       icon: Droplet,
       title: "Water for Communities",
       description: "Providing clean water access through borehole construction in rural areas.",
-      image: csrHero,
+      image: borehole,
     },
     {
       icon: GraduationCap,
       title: "Youth Empowerment",
       description: "Skills training and entrepreneurship programs for young people.",
-      image: csrHero,
+      image: youth,
     },
     {
       icon: Heart,
       title: "Community Healthcare",
       description: "Supporting healthcare facilities and medical outreach programs.",
-      image: csrHero,
+      image: healthcentre,
     },
   ];
 

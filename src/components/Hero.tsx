@@ -1,3 +1,4 @@
+
 interface HeroProps {
   backgroundImage: string;
   title: string;

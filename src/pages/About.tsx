@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { Target, Eye, Heart } from "lucide-react";
 import aboutImage from "@/assets/about-us.jpg";
+import aboutus1 from "@/assets/aboutus1.jpg";
 
 const About = () => {
   const values = [
@@ -31,16 +33,11 @@ const About = () => {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-muted">
-          <div className="container mx-auto px-4 lg:px-8">
-            <h1 className="font-display font-bold text-4xl md:text-5xl text-center mb-6 animate-fade-in">
-              About Us
-            </h1>
-            <p className="text-lg text-center text-muted-foreground max-w-3xl mx-auto animate-fade-in-delay">
-              Pioneering sustainable development in real estate and agriculture since our inception
-            </p>
-          </div>
-        </section>
+       <Hero
+          backgroundImage={aboutus1}
+          title="About Us"
+          subtitle="Pioneering sustainable development in real estate and agriculture since our inception"
+        />
 
         {/* Story Section */}
         <section className="py-16">

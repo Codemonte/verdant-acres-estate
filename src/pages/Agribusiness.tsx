@@ -1,10 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import { Wheat, Beef, Factory, Globe } from "lucide-react";
 import agribusinessHero from "@/assets/agribusiness-hero.jpg";
+import rice from "@/assets/rice.jpg";
+import poultry from "@/assets/poultry.jpg";
+import cassava from "@/assets/cassava.jpg";
+import aquaculture from "@/assets/aquaculture.jpg";
+import dairy from "@/assets/dairy.jpg";
+import vegetable from "@/assets/vegetable.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import HeroAgribusiness from "@/components/HeroAgribusiness";
 
 const Agribusiness = () => {
   const { elementRef: introRef, isVisible: introVisible } = useScrollAnimation();
@@ -43,7 +49,7 @@ const Agribusiness = () => {
       <Navbar />
 
       <main className="pt-20">
-        <Hero
+        <HeroAgribusiness
           backgroundImage={agribusinessHero}
           title="Sustainable Agribusiness"
           subtitle="Cultivating innovation and growth in modern agriculture"
@@ -128,32 +134,32 @@ const Agribusiness = () => {
                 {
                   name: "Rice Production Farm",
                   location: "Niger State",
-                  image: agribusinessHero,
+                  image: rice,
                 },
                 {
                   name: "Integrated Poultry Farm",
                   location: "Ogun State",
-                  image: agribusinessHero,
+                  image: poultry,
                 },
                 {
                   name: "Cassava Processing Plant",
                   location: "Benue State",
-                  image: agribusinessHero,
+                  image: cassava,
                 },
                 {
                   name: "Aquaculture Project",
                   location: "Delta State",
-                  image: agribusinessHero,
+                  image: aquaculture,
                 },
                 {
                   name: "Dairy Farm Initiative",
                   location: "Kaduna State",
-                  image: agribusinessHero,
+                  image: dairy,
                 },
                 {
                   name: "Vegetable Greenhouse",
                   location: "Plateau State",
-                  image: agribusinessHero,
+                  image: vegetable,
                 },
               ].map((project, index) => (
                 <div

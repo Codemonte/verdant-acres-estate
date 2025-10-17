@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Building2, Sprout, Users, Handshake, Heart, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import realEstateImg from "@/assets/real-estate-hero.jpg";
-import agribusinessImg from "@/assets/agribusiness-hero.jpg";
+import estateImg from "@/assets/estate.jpg";
+import palmImg from "@/assets/palm.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Index = () => {
@@ -51,7 +51,7 @@ const Index = () => {
                   : 'opacity-0 -translate-x-20'
               }`}>
                 <div className="h-48 overflow-hidden">
-                  <img src={realEstateImg} alt="Real Estate" className="w-full h-full object-cover" />
+                  <img src={estateImg} alt="Real Estate" className="w-full h-full object-cover" />
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
@@ -78,7 +78,7 @@ const Index = () => {
                   : 'opacity-0 translate-x-20'
               }`}>
                 <div className="h-48 overflow-hidden">
-                  <img src={agribusinessImg} alt="Agribusiness" className="w-full h-full object-cover" />
+                  <img src={palmImg} alt="Agribusiness" className="w-full h-full object-cover" />
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
@@ -188,7 +188,7 @@ const Index = () => {
         </section>
 
         {/* CSR Impact Section */}
-          <section ref={csrSection.elementRef} className="py-20 px-4 bg-background">
+        <section ref={csrSection.elementRef} className="py-20 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className={`text-center mb-12 transition-all duration-700 ${
               csrSection.isVisible 
