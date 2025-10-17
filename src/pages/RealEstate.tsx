@@ -170,7 +170,7 @@ const RealEstate = () => {
                     alt={project.name}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end">
                     <div className="p-6 text-primary-foreground">
                       <h3 className="font-display font-semibold text-xl mb-1">
                         {project.name}
