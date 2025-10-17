@@ -39,7 +39,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Link 
+            to="/" 
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <img src={logo} alt="Logo" className="h-12 w-12 object-contain" />
             <span className="font-display font-bold text-lg text-primary">
               AgriEstate
