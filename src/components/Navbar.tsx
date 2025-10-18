@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +45,7 @@ const Navbar = () => {
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <img src={logo} alt="Logo" className="h-12 w-12 object-contain" />
+            <OptimizedImage src={logo} alt="Logo" className="h-12 w-12 object-contain" />
             <span className="font-display font-bold text-lg text-primary">
               AgriEstate
             </span>

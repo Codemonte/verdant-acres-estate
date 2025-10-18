@@ -1,6 +1,7 @@
 import plantsImg from "@/assets/plants.jpg";
-import sandImg from "@/assets/sand.jpg";
-import palmtreeImg from "@/assets/palmtree.jpg";
+import palm0Img from "@/assets/palm0.jpg";
+import machine1Img from "@/assets/machine1.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface HeroAgribusinessProps {
   backgroundImage: string;
@@ -45,25 +46,25 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
           <div className="grid grid-cols-2 gap-2 md:gap-4 animate-fade-in-delay-2 mt-8 lg:mt-0">
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
-                <img 
-                  src={plantsImg} 
-                  alt="Real Estate" 
+                <OptimizedImage
+                  src={plantsImg}
+                  alt="Plants"
                   className="w-full h-32 md:h-64 object-cover hover-scale"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
-                <img 
-                  src={sandImg} 
-                  alt="Agribusiness" 
+                <OptimizedImage
+                  src={palm0Img}
+                  alt="Palm"
                   className="w-full h-24 md:h-48 object-cover hover-scale"
                 />
               </div>
             </div>
             <div className="mt-8">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
-                <img 
-                  src={palmtreeImg} 
-                  alt="Our Mission" 
+                <OptimizedImage
+                  src={machine1Img}
+                  alt="Machine"
                   className="w-full h-40 md:h-80 object-cover hover-scale"
                 />
               </div>

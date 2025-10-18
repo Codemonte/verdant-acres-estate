@@ -4,6 +4,7 @@ import HeroRealEstate from "@/components/HeroRealEstate";
 import ServiceCard from "@/components/ServiceCard";
 import { Building2, Home, MapPin, Briefcase } from "lucide-react";
 import realEstateHero from "@/assets/real-estate-hero.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 import valleyestate from "@/assets/valleyestate.jpg";
 import plaza from "@/assets/plaza.jpg";
 import residences from "@/assets/residences.jpg";
@@ -84,7 +85,7 @@ const RealEstate = () => {
         </section>
 
         {/* Services Grid */}
-        <section ref={servicesRef} className="py-16 bg-muted">
+        <section ref={servicesRef} className="py-15 bg-muted">
           <div className="container mx-auto px-4 lg:px-8">
             <h2 
               className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground transition-all duration-700"
@@ -171,7 +172,7 @@ const RealEstate = () => {
                     transitionDelay: `${index * 100}ms`
                   }}
                 >
-                  <img
+                  <OptimizedImage
                     src={project.image}
                     alt={project.name}
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"

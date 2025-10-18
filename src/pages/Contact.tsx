@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Clock, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -79,10 +80,10 @@ const Contact = () => {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section
-          className="relative py-20 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        >
+        <section className="relative py-20">
+          <div className="absolute inset-0">
+            <OptimizedImage src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          </div>
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
           <div className="relative container mx-auto px-4 lg:px-8 text-center">
             <h1 className="font-display font-bold text-4xl md:text-5xl text-primary-foreground mb-4 animate-fade-in">

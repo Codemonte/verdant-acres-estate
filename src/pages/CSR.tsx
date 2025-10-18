@@ -7,6 +7,7 @@ import borehole from "@/assets/borehole.jpg";
 import youth from "@/assets/youth.jpg";
 import healthcentre from "@/assets/healthcentre.jpg";
 import environment from "@/assets/environment.jpg"
+import OptimizedImage from "@/components/OptimizedImage";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const CSR = () => {
@@ -131,26 +132,28 @@ const CSR = () => {
               {initiatives.map((initiative, index) => (
                 <div
                   key={initiative.title}
-                  className="bg-card rounded-lg overflow-hidden hover-grow transition-all duration-700"
+                  className="relative rounded-lg overflow-hidden hover-grow transition-all duration-700"
                   style={{
                     opacity: initiativesVisible ? 1 : 0,
                     transform: initiativesVisible ? 'translateY(0)' : 'translateY(30px)',
                     transitionDelay: `${index * 100}ms`
                   }}
                 >
-                  <img
-                    src={initiative.image}
-                    alt={initiative.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-                      <initiative.icon className="w-6 h-6 text-primary" />
+                  <div className="absolute inset-0">
+                    <OptimizedImage src={initiative.image} alt={initiative.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                  </div>
+
+                  <div className="relative z-10 p-6 flex items-end lg:h-80">
+                    <div>
+                      <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
+                        <initiative.icon className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <h3 className="font-display font-semibold text-xl mb-1 text-primary-foreground">
+                        {initiative.title}
+                      </h3>
+                      <p className="text-sm text-primary-foreground/90 max-w-xl">{initiative.description}</p>
                     </div>
-                    <h3 className="font-display font-semibold text-xl mb-2 text-foreground">
-                      {initiative.title}
-                    </h3>
-                    <p className="text-muted-foreground">{initiative.description}</p>
                   </div>
                 </div>
               ))}

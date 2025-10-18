@@ -6,8 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Building2, Sprout, Users, Handshake, Heart, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import estateImg from "@/assets/estate.jpg";
-import palmImg from "@/assets/palm.jpg";
+import houseImg from "@/assets/house.jpg";
+import palmmmmmImg from "@/assets/palmmmmm.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Index = () => {
@@ -45,64 +46,64 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Real Estate Division */}
-              <Card className={`overflow-hidden hover-scale border-border transition-all duration-700 ${
+              <Link to="/real-estate" className={`group block transform-gpu transition-all duration-500 ${
                 whatWeDoSection.isVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-20'
               }`}>
-                <div className="h-48 overflow-hidden">
-                  <img src={estateImg} alt="Real Estate" className="w-full h-full object-cover" />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <Building2 className="w-6 h-6 text-primary" />
+                <Card className="relative overflow-hidden border-border hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-64 md:h-96 w-full">
+                    <OptimizedImage src={houseImg} alt="Real Estate" className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:from-black/70" />
+
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="p-3 rounded-full bg-white/10">
+                          <Building2 className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-semibold">Real Estate</h3>
+                      </div>
+                      <p className="text-sm mb-4 max-w-xl">Innovative property development, estate management, and housing investments that shape modern living spaces.</p>
+                      <div>
+                        <Button className="w-full md:w-auto">Learn More</Button>
+                      </div>
                     </div>
-                    <CardTitle className="text-2xl">Real Estate</CardTitle>
                   </div>
-                  <CardDescription>
-                    Innovative property development, estate management, and housing investments that shape modern living spaces.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link to="/real-estate">
-                    <Button className="w-full">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                </Card>
+              </Link>
 
               {/* Agribusiness Division */}
-              <Card className={`overflow-hidden hover-scale border-border transition-all duration-700 delay-200 ${
+              <Link to="/agribusiness" className={`group block transform-gpu transition-all duration-500 ${
                 whatWeDoSection.isVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-20'
               }`}>
-                <div className="h-48 overflow-hidden">
-                  <img src={palmImg} alt="Agribusiness" className="w-full h-full object-cover" />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <Sprout className="w-6 h-6 text-primary" />
+                <Card className="relative overflow-hidden border-border hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-64 md:h-96 w-full">
+                    <OptimizedImage src={palmmmmmImg} alt="Agribusiness" className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:from-black/70" />
+
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="p-3 rounded-full bg-white/10">
+                          <Sprout className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-semibold">Agribusiness</h3>
+                      </div>
+                      <p className="text-sm mb-4 max-w-xl">Sustainable farming practices, agro-processing, and agritech investments driving agricultural innovation.</p>
+                      <div>
+                        <Button className="w-full md:w-auto">Learn More</Button>
+                      </div>
                     </div>
-                    <CardTitle className="text-2xl">Agribusiness</CardTitle>
                   </div>
-                  <CardDescription>
-                    Sustainable farming practices, agro-processing, and agritech investments driving agricultural innovation.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link to="/agribusiness">
-                    <Button className="w-full">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Target Clients & Partners */}
-        <section ref={clientsSection.elementRef} className="py-20 px-4 bg-muted/30">
+        <section ref={clientsSection.elementRef} className="py-19 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
             <div className={`text-center mb-12 transition-all duration-700 ${
               clientsSection.isVisible 

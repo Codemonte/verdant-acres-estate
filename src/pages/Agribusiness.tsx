@@ -3,11 +3,12 @@ import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import { Wheat, Beef, Factory, Globe } from "lucide-react";
 import agribusinessHero from "@/assets/agribusiness-hero.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 import rice from "@/assets/rice.jpg";
 import poultry from "@/assets/poultry.jpg";
 import cassava from "@/assets/cassava.jpg";
-import aquaculture from "@/assets/aquaculture.jpg";
-import dairy from "@/assets/dairy.jpg";
+import aqua from "@/assets/aqua.jpg";
+import palmmmm from "@/assets/palmmmm.jpg";
 import vegetable from "@/assets/vegetable.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import HeroAgribusiness from "@/components/HeroAgribusiness";
@@ -84,7 +85,7 @@ const Agribusiness = () => {
         </section>
 
         {/* Services Grid */}
-        <section ref={servicesRef} className="py-16 bg-muted">
+        <section ref={servicesRef} className="py-15 bg-muted">
           <div className="container mx-auto px-4 lg:px-8">
             <h2 
               className="font-display font-bold text-3xl md:text-4xl text-center mb-12 text-foreground transition-all duration-700"
@@ -149,12 +150,12 @@ const Agribusiness = () => {
                 {
                   name: "Aquaculture Project",
                   location: "Delta State",
-                  image: aquaculture,
+                  image: aqua,
                 },
                 {
-                  name: "Dairy Farm Initiative",
-                  location: "Kaduna State",
-                  image: dairy,
+                  name: "Oil Palm Plantation",
+                  location: "Abia State",
+                  image: palmmmm,
                 },
                 {
                   name: "Vegetable Greenhouse",
@@ -171,7 +172,7 @@ const Agribusiness = () => {
                     transitionDelay: `${index * 100}ms`
                   }}
                 >
-                  <img
+                  <OptimizedImage
                     src={project.image}
                     alt={project.name}
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"

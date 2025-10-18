@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,7 +29,7 @@ const Footer = () => {
           {/* Left Section - Logo & Tagline */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Logo" className="h-10 w-10 object-contain brightness-0 invert" />
+              <OptimizedImage src={logo} alt="Logo" className="h-10 w-10 object-contain brightness-0 invert" />
               <span className="font-display font-bold text-lg">AgriEstate</span>
             </div>
             <p className="text-sm text-primary-foreground/80">

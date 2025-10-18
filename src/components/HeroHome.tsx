@@ -1,6 +1,7 @@
-import buildingImg from "@/assets/building.jpg";
-import machineImg from "@/assets/machine.jpg";
-import peopleImg from "@/assets/people.jpg";
+import constructImg from "@/assets/construct.jpg";
+import palmmImg from "@/assets/palmm.jpg";
+import palmmmImg from "@/assets/palmmm.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface HeroHomeProps {
   backgroundImage: string;
@@ -17,6 +18,10 @@ const HeroHome = ({ backgroundImage, title, subtitle, overlay = true }: HeroHome
         className="absolute inset-0 bg-cover bg-center animate-zoom-pan"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
+      {/* Preload background for better perceived load (hidden) */}
+      <div className="sr-only">
+        <OptimizedImage src={backgroundImage} alt="" />
+      </div>
 
       {/* Overlay */}
       {overlay && (
@@ -45,25 +50,25 @@ const HeroHome = ({ backgroundImage, title, subtitle, overlay = true }: HeroHome
           <div className="grid grid-cols-2 gap-2 md:gap-4 animate-fade-in-delay-2 mt-8 lg:mt-0">
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
-                <img 
-                  src={buildingImg} 
-                  alt="Real Estate" 
+                <OptimizedImage
+                  src={constructImg}
+                  alt="Real Estate"
                   className="w-full h-32 md:h-64 object-cover hover-scale"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
-                <img 
-                  src={machineImg} 
-                  alt="Agribusiness" 
+                <OptimizedImage
+                  src={palmmImg}
+                  alt="Agribusiness"
                   className="w-full h-24 md:h-48 object-cover hover-scale"
                 />
               </div>
             </div>
             <div className="mt-8">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
-                <img 
-                  src={peopleImg} 
-                  alt="Our Mission" 
+                <OptimizedImage
+                  src={palmmmImg}
+                  alt="Our Mission"
                   className="w-full h-40 md:h-80 object-cover hover-scale"
                 />
               </div>

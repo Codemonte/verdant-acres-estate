@@ -1,6 +1,7 @@
 import build3Img from "@/assets/build3.jpg";
 import build2Img from "@/assets/build2.jpg";
 import buildImg from "@/assets/build.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface HeroAgribusinessProps {
   backgroundImage: string;
@@ -45,25 +46,25 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
           <div className="grid grid-cols-2 gap-2 md:gap-4 animate-fade-in-delay-2 mt-8 lg:mt-0">
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
-                <img 
-                  src={build3Img} 
-                  alt="Real Estate" 
+                <OptimizedImage
+                  src={build3Img}
+                  alt="Real Estate"
                   className="w-full h-32 md:h-64 object-cover hover-scale"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
-                <img 
-                  src={build2Img} 
-                  alt="Agribusiness" 
+                <OptimizedImage
+                  src={build2Img}
+                  alt="Build 2"
                   className="w-full h-24 md:h-48 object-cover hover-scale"
                 />
               </div>
             </div>
             <div className="mt-8">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
-                <img 
-                  src={buildImg} 
-                  alt="Our Mission" 
+                <OptimizedImage
+                  src={buildImg}
+                  alt="Our Mission"
                   className="w-full h-40 md:h-80 object-cover hover-scale"
                 />
               </div>
