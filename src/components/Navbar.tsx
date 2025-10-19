@@ -47,7 +47,7 @@ const Navbar = () => {
           >
             <OptimizedImage src={logo} alt="Logo" className="h-12 w-12 object-contain" />
             <span className="font-display font-bold text-lg text-primary">
-              AgriEstate
+              ECOFIELD AGRO & HOMES LTD
             </span>
           </Link>
 

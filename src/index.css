@@ -125,6 +125,11 @@ All colors MUST be HSL.
   }
 
   .animate-zoom-pan {
+    /* Improve zoom/pan rendering: set transform origin and hint to browser
+       that we will animate transform. Reduce translate use to avoid
+       layout shifts or distortion when browser zoom changes. */
+    transform-origin: center center;
+    will-change: transform;
     animation: zoom-pan 20s ease-in-out infinite alternate;
   }
 
@@ -182,11 +187,13 @@ All colors MUST be HSL.
   }
 
   @keyframes zoom-pan {
+    /* Use only a subtle scale around the center to avoid pixel stretching
+       and eliminate the translate which can cause misalignment when zoomed. */
     0% {
-      transform: scale(1) translate(0, 0);
+      transform: scale(1);
     }
     100% {
-      transform: scale(1.1) translate(-5%, -5%);
+      transform: scale(1.04);
     }
   }
 }

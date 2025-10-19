@@ -12,20 +12,14 @@ interface HeroAgribusinessProps {
 
 const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: HeroAgribusinessProps) => {
   return (
-    <section className="relative h-[70vh] md:h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Zoom-Pan Animation */}
-      <div
-        className="absolute inset-0 bg-cover bg-center animate-zoom-pan"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
+    <section className="relative min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Zoom-Pan Animation (IMG for responsive zoom) */}
+      <div className="absolute inset-0 animate-zoom-pan">
+        <OptimizedImage src={backgroundImage} alt="" className="w-full h-full object-cover" />
+      </div>
 
       {/* Overlay */}
-      {overlay && (
-        <div
-          className="absolute inset-0"
-          style={{ background: "var(--gradient-hero)" }}
-        />
-      )}
+      {overlay && <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />}
 
       {/* Content Container */}
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">

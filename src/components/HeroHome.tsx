@@ -12,27 +12,20 @@ interface HeroHomeProps {
 
 const HeroHome = ({ backgroundImage, title, subtitle, overlay = true }: HeroHomeProps) => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Zoom-Pan Animation */}
-      <div
-        className="absolute inset-0 bg-cover bg-center animate-zoom-pan"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
-      {/* Preload background for better perceived load (hidden) */}
-      <div className="sr-only">
-        <OptimizedImage src={backgroundImage} alt="" />
+    <section className="relative min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Zoom-Pan Animation (use IMG for better resizing) */}
+      <div className="absolute inset-0 animate-zoom-pan">
+        <OptimizedImage src={backgroundImage} alt="" className="w-full h-full object-cover" />
+        {/* subtle overlay handled below */}
       </div>
 
       {/* Overlay */}
       {overlay && (
-        <div
-          className="absolute inset-0"
-          style={{ background: "var(--gradient-hero)" }}
-        />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       )}
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 max-w-7xl">
+  {/* Content Container - add top padding to avoid overlapping the fixed navbar (h-20) */}
+  <div className="relative z-10 container mx-auto px-4 max-w-7xl pt-20 md:pt-24 lg:pt-28">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left">

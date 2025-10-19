@@ -48,12 +48,12 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@agriestate.com",
+      content: "info@ecofieldsng.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+234 (0) 123 456 7890",
+      content: "(+234) 07044160754, 08027351816, 08128457792",
     },
     {
       icon: Clock,
@@ -63,15 +63,13 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      content: "Lagos, Nigeria",
+      content: [
+        "Suite 2A, Tafawa Balewa Square, Obalende.",
+        "Siute c 45, 2nd floor, EFAB Complex Area II, Opp. Federal Capital Development Authority, Garki, Abuja.",
+        "Block B, House 3, Crystal Garden Estate, Hassan Kastina Way, Adjacent CBN, Lokoja, Kogi State.",
+        "Plot A26, Summithills Estate Calabar, Cross River State."
+      ],
     },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
   ];
 
   return (
@@ -186,28 +184,18 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
-                        <p className="text-muted-foreground">{info.content}</p>
+                        {Array.isArray(info.content) ? (
+                          <div className="text-muted-foreground space-y-2">
+                            {info.content.map((line, i) => (
+                              <div key={i}>{line}</div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-muted-foreground">{info.content}</p>
+                        )}
                       </div>
                     </div>
                   ))}
-                </div>
-
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="font-display font-semibold text-lg mb-4 text-foreground">
-                    Follow Us
-                  </h3>
-                  <div className="flex space-x-4">
-                    {socialLinks.map((social) => (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        aria-label={social.label}
-                        className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      >
-                        <social.icon className="w-5 h-5 text-primary" />
-                      </a>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
