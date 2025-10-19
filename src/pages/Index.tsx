@@ -18,7 +18,7 @@ const Index = () => {
   const contactSection = useScrollAnimation();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       
       <main>
@@ -46,7 +46,7 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Real Estate Division */}
-              <Link to="/real-estate" className={`group block transform-gpu transition-all duration-500 ${
+              <Link to="/real-estate" className={`group block transition-all duration-500 ${
                 whatWeDoSection.isVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-20'
@@ -73,7 +73,7 @@ const Index = () => {
               </Link>
 
               {/* Agribusiness Division */}
-              <Link to="/agribusiness" className={`group block transform-gpu transition-all duration-500 ${
+              <Link to="/agribusiness" className={`group block transition-all duration-500 ${
                 whatWeDoSection.isVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-20'
