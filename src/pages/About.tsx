@@ -5,6 +5,8 @@ import { Target, Eye, Heart, Building2, Sprout } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 // aboutImage removed — story will be text-only
 import aboutus1 from "@/assets/aboutus1.jpg";
+import building0 from "@/assets/building0.jpg";
+import palm00 from "@/assets/palm00.jpg";
 import OptimizedImage from "@/components/OptimizedImage";
 
 const About = () => {
@@ -100,7 +102,7 @@ const About = () => {
                   transitionDelay: '1500ms',
                 }}
               >
-                <OptimizedImage src={"/src/assets/building0.jpg"} alt="Real Estate" className="w-full h-48 md:h-64 object-cover" />
+                <OptimizedImage src={building0} alt="Real Estate development projects" className="w-full h-48 md:h-64 object-cover" />
               </div>
             </div>
 
@@ -115,7 +117,7 @@ const About = () => {
                   transitionDelay: '1500ms',
                 }}
               >
-                <OptimizedImage src={"/src/assets/palm00.jpg"} alt="Agribusiness" className="w-full h-48 md:h-64 object-cover" />
+                <OptimizedImage src={palm00} alt="Agribusiness palm plantation" className="w-full h-48 md:h-64 object-cover" />
               </div>
               <div className="relative pr-6 md:pr-8">
                 {/* vertical line on right (md+) from near heading down to list end */}
