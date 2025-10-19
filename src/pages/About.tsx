@@ -79,7 +79,7 @@ const About = () => {
             </div>
 
             {/* Real Estate - text left, image right */}
-            <div className={`grid md:grid-cols-2 gap-8 items-center mb-8 ${whatWeDo.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} transition-all duration-700`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 ${whatWeDo.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} transition-all duration-700`}>
               <div className="relative pl-6 md:pl-8">
                 {/* vertical line on left (md+) from near heading down to list end */}
                 <span className="hidden md:block absolute left-0 top-6 bottom-0 w-[2px] bg-primary/50" />
@@ -105,7 +105,7 @@ const About = () => {
             </div>
 
             {/* Agribusiness - image left, text right */}
-            <div className={`grid md:grid-cols-2 gap-8 items-center ${whatWeDo.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} transition-all duration-700`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${whatWeDo.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} transition-all duration-700`}>
               <div
                 className="rounded-lg overflow-hidden shadow-lg order-1 md:order-none"
                 style={{
