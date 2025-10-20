@@ -42,12 +42,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            className="flex items-center space-x-2"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <OptimizedImage src={logo} alt="Logo" className="h-12 w-12 object-contain" />
-            <span className="font-display font-bold text-lg text-primary">
-              ECOFIELD AGRO & HOMES LTD
+            <span className="font-display font-bold text-lg text-green-900">
+              ECOFIELD AGRO <br></br> & HOMES LTD
             </span>
           </Link>
 
@@ -59,8 +59,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`link-underline text-sm font-medium transition-colors ${
                   isActive(link.path)
-                    ? "text-primary active"
-                    : "text-foreground hover:text-primary"
+                    ? "text-green-900 active"
+                    : "text-foreground hover:text-green-950"
                 }`}
               >
                 {link.name}
@@ -70,7 +70,7 @@ const Navbar = () => {
 
           {/* Contact Button */}
           <div className="hidden lg:block">
-            <Button asChild className="bg-primary hover:bg-primary/90">
+            <Button asChild className="bg-green-900 hover:bg-green-950">
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
