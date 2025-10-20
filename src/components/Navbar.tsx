@@ -46,7 +46,7 @@ const Navbar = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <OptimizedImage src={logo} alt="Logo" className="h-12 w-12 object-contain" />
-            <span className="font-display font-bold text-lg text-green-900">
+            <span className="font-display font-bold text-md text-green-900">
               ECOFIELD AGRO <br></br> & HOMES LTD
             </span>
           </Link>
