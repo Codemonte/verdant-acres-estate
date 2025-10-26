@@ -8,7 +8,7 @@ import rice from "@/assets/rice.jpg";
 import poultry from "@/assets/poultry.jpg";
 import cassava from "@/assets/cassava.jpg";
 import aqua from "@/assets/aqua.jpg";
-import palmmmm from "@/assets/palmmmm.jpg";
+import two from "@/assets/two.jpg";
 import vegetable from "@/assets/vegetable.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import HeroAgribusiness from "@/components/HeroAgribusiness";
@@ -155,7 +155,7 @@ const Agribusiness = () => {
                 {
                   name: "Oil Palm Plantation",
                   location: "Abia State",
-                  image: palmmmm,
+                  image: two,
                 },
                 {
                   name: "Vegetable Greenhouse",

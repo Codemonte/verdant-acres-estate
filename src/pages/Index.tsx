@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Building2, Sprout, Users, Handshake, Heart, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import houseImg from "@/assets/house.jpg";
-import palmmmmmImg from "@/assets/palmmmmm.jpg";
+import twelveImg from "@/assets/twelve.png";
+import palm00Img from "@/assets/palm00.jpg";
 import OptimizedImage from "@/components/OptimizedImage";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -53,7 +53,7 @@ const Index = () => {
               }`}>
                 <Card className="relative overflow-hidden border-border hover:scale-105 transition-transform duration-300">
                   <div className="relative h-64 md:h-96 w-full">
-                    <OptimizedImage src={houseImg} alt="Real Estate" className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <OptimizedImage src={twelveImg} alt="Real Estate" className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:from-black/70" />
 
                     <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">
@@ -80,7 +80,7 @@ const Index = () => {
               }`}>
                 <Card className="relative overflow-hidden border-border hover:scale-105 transition-transform duration-300">
                   <div className="relative h-64 md:h-96 w-full">
-                    <OptimizedImage src={palmmmmmImg} alt="Agribusiness" className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <OptimizedImage src={palm00Img} alt="Agribusiness" className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 group-hover:from-black/70" />
 
                     <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 text-white">

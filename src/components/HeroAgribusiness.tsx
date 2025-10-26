@@ -1,6 +1,6 @@
-import plantsImg from "@/assets/plants.jpg";
-import palm0Img from "@/assets/palm0.jpg";
-import machine1Img from "@/assets/machine1.jpg";
+import sixImg from "@/assets/six.png";
+import nineImg from "@/assets/nine.png";
+import fiveImg from "@/assets/five.png";
 import OptimizedImage from "@/components/OptimizedImage";
 
 interface HeroAgribusinessProps {
@@ -41,14 +41,14 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
                 <OptimizedImage
-                  src={plantsImg}
+                  src={sixImg}
                   alt="Plants"
                   className="w-full h-32 md:h-64 object-cover hover-scale"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
                 <OptimizedImage
-                  src={palm0Img}
+                  src={fiveImg}
                   alt="Palm"
                   className="w-full h-24 md:h-48 object-cover hover-scale"
                 />
@@ -57,7 +57,7 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
             <div className="mt-8">
               <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
                 <OptimizedImage
-                  src={machine1Img}
+                  src={nineImg}
                   alt="Machine"
                   className="w-full h-40 md:h-80 object-cover hover-scale"
                 />

@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <OptimizedImage src={logo} alt="Logo" className="h-12 w-12 object-contain" />
