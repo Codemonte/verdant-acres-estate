@@ -1,6 +1,7 @@
 import tenImg from "@/assets/ten.png";
 import thirteenImg from "@/assets/thirteen.jpg";
 import buildImg from "@/assets/build.jpg";
+import elevenImg from "@/assets/eleven.png";
 import OptimizedImage from "@/components/OptimizedImage";
 
 interface HeroAgribusinessProps {
@@ -36,32 +37,22 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
             )}
           </div>
 
-          {/* Animated Images Grid */}
+          {/* Animated Images Grid (2x2) */}
           <div className="grid grid-cols-2 gap-2 md:gap-4 animate-fade-in-delay-2 mt-8 lg:mt-0">
-            <div className="space-y-4">
-              <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
-                <OptimizedImage
-                  src={tenImg}
-                  alt="Real Estate"
-                  className="w-full h-32 md:h-64 object-cover hover-scale"
-                />
-              </div>
-              <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
-                <OptimizedImage
-                  src={thirteenImg}
-                  alt="Build 2"
-                  className="w-full h-24 md:h-48 object-cover hover-scale"
-                />
-              </div>
+            <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up">
+              <OptimizedImage src={tenImg} alt="Real Estate" className="w-full h-28 md:h-48 lg:h-56 object-cover hover-scale" />
             </div>
-            <div className="mt-8">
-              <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
-                <OptimizedImage
-                  src={buildImg}
-                  alt="Our Mission"
-                  className="w-full h-40 md:h-80 object-cover hover-scale"
-                />
-              </div>
+
+            <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-100">
+              <OptimizedImage src={elevenImg} alt="Residence" className="w-full h-28 md:h-48 lg:h-56 object-cover hover-scale" />
+            </div>
+
+            <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-200">
+              <OptimizedImage src={thirteenImg} alt="Build 2" className="w-full h-28 md:h-48 lg:h-56 object-cover hover-scale" />
+            </div>
+
+            <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
+              <OptimizedImage src={buildImg} alt="Our Mission" className="w-full h-28 md:h-48 lg:h-56 object-cover hover-scale" />
             </div>
           </div>
         </div>
