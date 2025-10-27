@@ -1,6 +1,6 @@
 import tenImg from "@/assets/ten.png";
 import thirteenImg from "@/assets/thirteen.jpg";
-import buildImg from "@/assets/build.jpg";
+import duplexImg from "@/assets/duplex.jpg";
 import elevenImg from "@/assets/eleven.png";
 import OptimizedImage from "@/components/OptimizedImage";
 
@@ -52,7 +52,7 @@ const HeroAgribusiness = ({ backgroundImage, title, subtitle, overlay = true }: 
             </div>
 
             <div className="overflow-hidden rounded-lg shadow-elegant animate-slide-up delay-300">
-              <OptimizedImage src={buildImg} alt="Our Mission" className="w-full h-28 md:h-48 lg:h-56 object-cover hover-scale" />
+              <OptimizedImage src={duplexImg} alt="Our Mission" className="w-full h-28 md:h-48 lg:h-56 object-cover hover-scale" />
             </div>
           </div>
         </div>
