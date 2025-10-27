@@ -288,7 +288,7 @@ const Index = () => {
                 <CardContent className="pt-6">
                   <Mail className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-sm text-primary-foreground/80">info@ecofieldsng.com</p>
+                  <p className="text-sm text-primary-foreground/80">ecofieldhomes@gmail.com</p>
                 </CardContent>
               </Card>
               <Card className={`text-center border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground hover-scale transition-all duration-700 delay-300 ${
