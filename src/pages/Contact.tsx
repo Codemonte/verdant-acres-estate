@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, Clock, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, Clock, MapPin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import OptimizedImage from "@/components/OptimizedImage";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -20,7 +21,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -31,16 +32,37 @@ const Contact = () => {
       return;
     }
 
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    // Send email via EmailJS
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Your EmailJS service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Your EmailJS template ID
+        formData, // form data being sent
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Your public key
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent!",
+            description: "We'll get back to you as soon as possible.",
+          });
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (error) => {
+          console.error("Email send error:", error);
+          toast({
+            title: "Error",
+            description:
+              "There was a problem sending your message. Please try again later.",
+            variant: "destructive",
+          });
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -48,7 +70,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@ecofieldsng.com",
+      content: "ecofieldhomes@gmail.com",
     },
     {
       icon: Phone,
@@ -65,9 +87,9 @@ const Contact = () => {
       title: "Location",
       content: [
         "Suite 2A, Tafawa Balewa Square, Obalende.",
-        "Siute c 45, 2nd floor, EFAB Complex Area II, Opp. Federal Capital Development Authority, Garki, Abuja.",
+        "Suite C45, 2nd floor, EFAB Complex Area II, Opp. Federal Capital Development Authority, Garki, Abuja.",
         "Block B, House 3, Crystal Garden Estate, Hassan Kastina Way, Adjacent CBN, Lokoja, Kogi State.",
-        "Plot A26, Summithills Estate Calabar, Cross River State."
+        "Plot A26, Summithills Estate Calabar, Cross River State.",
       ],
     },
   ];
@@ -80,9 +102,16 @@ const Contact = () => {
         {/* Hero Section */}
         <section className="relative py-20">
           <div className="absolute inset-0">
-            <OptimizedImage src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <OptimizedImage
+              src={heroBg}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
-          <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+          <div
+            className="absolute inset-0"
+            style={{ background: "var(--gradient-hero)" }}
+          />
           <div className="relative container mx-auto px-4 lg:px-8 text-center">
             <h1 className="font-display font-bold text-4xl md:text-5xl text-primary-foreground mb-4 animate-fade-in">
               Get In Touch
@@ -104,7 +133,10 @@ const Contact = () => {
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Full Name *
                     </label>
                     <Input
@@ -120,7 +152,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Email Address *
                     </label>
                     <Input
@@ -136,7 +171,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Phone Number
                     </label>
                     <Input
@@ -151,7 +189,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Message *
                     </label>
                     <Textarea
@@ -165,7 +206,10 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90"
+                  >
                     Send Message
                   </Button>
                 </form>
@@ -183,7 +227,9 @@ const Contact = () => {
                         <info.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          {info.title}
+                        </h3>
                         {Array.isArray(info.content) ? (
                           <div className="text-muted-foreground space-y-2">
                             {info.content.map((line, i) => (
@@ -191,7 +237,9 @@ const Contact = () => {
                             ))}
                           </div>
                         ) : (
-                          <p className="text-muted-foreground">{info.content}</p>
+                          <p className="text-muted-foreground">
+                            {info.content}
+                          </p>
                         )}
                       </div>
                     </div>

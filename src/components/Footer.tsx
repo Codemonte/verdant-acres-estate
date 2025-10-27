@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">Get In Touch</h3>
             <div className="space-y-2 text-sm text-primary-foreground/80 mb-4">
-              <p>Email: info@ecofieldsng.com</p>
+              <p>Email: ecofieldhomes@.com</p>
               <p>Phone: (+234) 07044160754, 08027351816, 08128457792</p>
               <p>Hours: Mon - Fri, 9:00 AM - 5:00 PM</p>
             </div>
